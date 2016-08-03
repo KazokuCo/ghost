@@ -11,4 +11,4 @@ RUN npm install -q --no-color ghost-s3-storage pg
 ADD config.js /srv/ghost/config.js
 
 ENV GHOST_NODE_VERSION_CHECK=false
-CMD NODE_ENV=production npm start
+CMD npm start
