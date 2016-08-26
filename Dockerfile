@@ -1,7 +1,7 @@
 FROM node:4.3
 RUN apt-get update -qq && apt-get install unzip
 
-ENV GHOST_VERSION=0.8.0
+ENV GHOST_VERSION=0.9.0
 
 WORKDIR /srv/ghost
 ADD https://ghost.org/zip/ghost-${GHOST_VERSION}.zip ghost.zip
