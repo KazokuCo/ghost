@@ -1,0 +1,18 @@
+version: '2'
+services:
+  web:
+    build: .
+    image: kazokuco/ghost
+    ports:
+      - "2368:2368"
+    environment:
+      NODE_ENV: production
+      GHOST_URL: "http://localhost:2368"
+      GHOST_DB_HOST: postgres
+      GHOST_DB_USERNAME: ghost
+      GHOST_DB_PASSWORD: password
+      GHOST_DB_NAME: ghost
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres
