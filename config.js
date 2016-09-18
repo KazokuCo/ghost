@@ -33,6 +33,16 @@ config = {
                 charset  : 'utf8'
             }
         },
+        storage: {
+          active: 'ghost-s3',
+          'ghost-s3': {
+            accessKeyId: process.ENV.GHOST_S3_ACCESS_KEY_ID,
+            secretAccessKey: process.ENV.GHOST_S3_ACCESS_KEY,
+            bucket: process.ENV.GHOST_S3_BUCKET,
+            region: process.ENV.GHOST_S3_REGION,
+            assetHost: process.ENV.GHOST_ASSET_HOST
+          }
+        },
         server: {
             host: '0.0.0.0',
             port: process.ENV.GHOST_PORT || '2368'
