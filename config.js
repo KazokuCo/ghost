@@ -34,8 +34,8 @@ config = {
             }
         },
         storage: {
-          active: 'ghost-s3',
-          'ghost-s3': {
+          active: 's3',
+          s3: {
             accessKeyId: process.env.GHOST_S3_ACCESS_KEY_ID,
             secretAccessKey: process.env.GHOST_S3_ACCESS_KEY,
             bucket: process.env.GHOST_S3_BUCKET,
