@@ -11,41 +11,41 @@ config = {
     // When running Ghost in the wild, use the production environment.
     // Configure your URL and mail settings here
     production: {
-        url: process.ENV.GHOST_URL,
+        url: process.env.GHOST_URL,
         mail: {
             transport: 'SMTP',
             options: {
-                host: process.ENV.GHOST_SMTP_HOST,
-                port: process.ENV.GHOST_SMTP_PORT,
+                host: process.env.GHOST_SMTP_HOST,
+                port: process.env.GHOST_SMTP_PORT,
                 auth: {
-                    user: process.ENV.GHOST_SMTP_USERNAME,
-                    pass: process.ENV.GHOST_SMTP_PASSWORD
+                    user: process.env.GHOST_SMTP_USERNAME,
+                    pass: process.env.GHOST_SMTP_PASSWORD
                 }
             }
         },
         database: {
             client: 'pg',
             connection: {
-                host     : process.ENV.GHOST_DB_HOST,
-                user     : process.ENV.GHOST_DB_USERNAME,
-                password : process.ENV.GHOST_DB_PASSWORD,
-                database : process.ENV.GHOST_DB_NAME,
+                host     : process.env.GHOST_DB_HOST,
+                user     : process.env.GHOST_DB_USERNAME,
+                password : process.env.GHOST_DB_PASSWORD,
+                database : process.env.GHOST_DB_NAME,
                 charset  : 'utf8'
             }
         },
         storage: {
           active: 'ghost-s3',
           'ghost-s3': {
-            accessKeyId: process.ENV.GHOST_S3_ACCESS_KEY_ID,
-            secretAccessKey: process.ENV.GHOST_S3_ACCESS_KEY,
-            bucket: process.ENV.GHOST_S3_BUCKET,
-            region: process.ENV.GHOST_S3_REGION,
-            assetHost: process.ENV.GHOST_ASSET_HOST
+            accessKeyId: process.env.GHOST_S3_ACCESS_KEY_ID,
+            secretAccessKey: process.env.GHOST_S3_ACCESS_KEY,
+            bucket: process.env.GHOST_S3_BUCKET,
+            region: process.env.GHOST_S3_REGION,
+            assetHost: process.env.GHOST_ASSET_HOST
           }
         },
         server: {
             host: '0.0.0.0',
-            port: process.ENV.GHOST_PORT || '2368'
+            port: process.env.GHOST_PORT || '2368'
         }
     },
 
@@ -95,7 +95,7 @@ config = {
         // #### Paths
         // Specify where your content directory lives
         paths: {
-            contentPath: process.ENV.GHOST_CONTENT || path.join(__dirname, '/content/')
+            contentPath: process.env.GHOST_CONTENT || path.join(__dirname, '/content/')
         }
     },
 
