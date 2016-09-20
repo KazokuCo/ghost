@@ -1,6 +1,6 @@
-FROM ghost:0.9
-RUN npm install -q --no-color ghost-s3-storage pg && npm cache clean
-RUN mkdir -p content/storage/ghost-s3 && echo "module.exports = require('ghost-s3-storage');" > content/storage/ghost-s3/index.js
+FROM ghost:0.11.0
+RUN npm install -q --no-color ghost-storage-adapter-s3 pg && npm cache clean
+RUN mkdir content/storage && cp -r node_modules/ghost-storage-adapter-s3 content/storage/s3
 RUN chown -R user .
 ADD config.js config.js
 
