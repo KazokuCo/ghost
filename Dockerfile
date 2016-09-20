@@ -5,5 +5,5 @@ RUN chown -R user .
 ADD config.js config.js
 
 # Reset Ghost's entrypoint nonsense >_>
-ENTRYPOINT ["/bin/sh", "-c"]
+ENTRYPOINT []
 CMD ["npm", "start"]
