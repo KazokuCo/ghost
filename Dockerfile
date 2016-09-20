@@ -6,4 +6,4 @@ ADD config.js config.js
 
 # Reset Ghost's entrypoint nonsense >_>
 ENTRYPOINT []
-CMD ["npm", "start"]
+CMD ["bash", "-c", "npm start || cat npm-debug.log"]
