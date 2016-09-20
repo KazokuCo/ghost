@@ -34,8 +34,8 @@ config = {
             }
         },
         storage: {
-          active: 's3',
-          s3: {
+          active: 'ghost-s3',
+          'ghost-s3': {
             accessKeyId: process.env.GHOST_S3_ACCESS_KEY_ID,
             secretAccessKey: process.env.GHOST_S3_ACCESS_KEY,
             bucket: process.env.GHOST_S3_BUCKET,
@@ -95,7 +95,7 @@ config = {
         // #### Paths
         // Specify where your content directory lives
         paths: {
-            contentPath: process.env.GHOST_CONTENT || path.join(__dirname, '/content/')
+            contentPath: path.join(__dirname, '/content/')
         }
     },
 
