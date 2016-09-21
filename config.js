@@ -16,11 +16,7 @@ config = {
             transport: 'SMTP',
             options: {
                 host: process.env.GHOST_SMTP_HOST,
-                port: process.env.GHOST_SMTP_PORT,
-                auth: {
-                    user: process.env.GHOST_SMTP_USERNAME,
-                    pass: process.env.GHOST_SMTP_PASSWORD
-                }
+                port: process.env.GHOST_SMTP_PORT
             }
         },
         database: {
